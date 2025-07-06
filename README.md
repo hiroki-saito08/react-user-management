@@ -1,54 +1,64 @@
-# React + TypeScript + Vite 
+# ユーザー管理アプリ / User Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Vite + Chakra UI を使って開発したシンプルなユーザー管理アプリです。  
+This is a simple user management app built with React, TypeScript, Vite, and Chakra UI.
 
-Currently, two official plugins are available:
+ログイン、ユーザー一覧の表示、詳細モーダルの表示などの機能を備えており、モダンなReact開発の学習を目的に作成されました。  
+It features login, user list display, and user detail modals — intended as a modern UI practice project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔧 使用技術 / Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18 + Vite  
+- TypeScript  
+- Chakra UI  
+- ESLint (TypeScript rules)  
+- Custom React Hooks  
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✅ 主な機能 / Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- ユーザーIDによるログイン（パスワードなし）  
+  Login with user ID (no password)  
+- ユーザー一覧の取得と表示  
+  Fetch and display user list  
+- ユーザー詳細モーダル  
+  User detail shown in a modal  
+- 管理者判定によるUI制御  
+  Conditional UI based on admin check  
+- レスポンシブ対応  
+  Responsive layout with Chakra UI  
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 📁 ディレクトリ構成 / Directory Structure
+src/
+├── components/
+│ ├── pages/
+│ │ ├── Home.tsx
+│ │ ├── Login.tsx
+│ │ └── UserManagement.tsx
+│ └── organisms/User/
+│ ├── UserCard.tsx
+│ └── UserDetailModal.tsx
+├── hooks/
+│ ├── useAuth.ts
+│ ├── useAllUsers.ts
+│ ├── useLoginUser.ts
+│ └── useSelectUser.ts
+
+
+---
+
+## 🚀 セットアップ方法 / Getting Started
+
+```bash
+git clone https://github.com/hiroki-saito08/react-user-management.git
+cd react-user-management
+npm install
+npm run dev
+
+🗓️ 作成時期 / Created
+2025年6月 / June 2025
